@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Crossword</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <style>
+        #grid {
+            margin-top: 10px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .cell-wrapper {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            margin: 2px;
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            line-height: 1;
+            box-sizing: border-box;
+
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            touch-action: manipulation;
+        }
+
+
+        .cell.active {
+            background-color: #d0ebff;
+        }
+
+        .cell.correct {
+            background-color: #c8f7c5;
+        }
+
+        .cell.incorrect {
+            background-color: #f7c5c5;
+        }
+
+        .cell.black {
+            background-color: black;
+            pointer-events: none;
+        }
+
+        .number {
+            position: absolute;
+            top: 2px;
+            left: 4px;
+            font-size: 10px;
+            pointer-events: none;
+        }
+
+        #clue {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+
+        #win-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+        }
+
+        #win-overlay.hidden {
+          display: none;
+        }
+
+        #win-popup {
+          background: white;
+          padding: 24px 28px;
+          border-radius: 12px;
+          text-align: center;
+          position: relative;
+          max-width: 300px;
+          width: 90%;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        #win-popup h2 {
+          margin-top: 0;
+        }
+
+        #win-close {
+          position: absolute;
+          top: 8px;
+          right: 10px;
+          border: none;
+          background: none;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<button onclick="loadPuzzle()">Load Puzzle</button>
+<button onclick="checkLetter()">Check Letter</button>
+<button onclick="checkWord()">Check Word</button>
+<button onclick="checkBoard()">Check Board</button>
+
+<div id="status"></div>
+<div id="grid"></div>
+<div id="clue">Click a square</div>
+<div id="win-overlay" class="hidden">
+  <div id="win-popup">
+    <button id="win-close" aria-label="Close">✕</button>
+    <h2>🎉 Puzzle Complete!</h2>
+    <p>Nice work — you solved the crossword.</p>
+  </div>
+</div>
+
+
+<script>
+let puzzleData = null;
+let direction = "across";
+let cells = [];
+let currentCell = null;
+let hasWon = false;
+
+
+function clearCheckState(box) {
+    box.classList.remove("correct", "incorrect");
+}
+
+function loadPuzzle() {
+    hasWon = false;
+
+    fetch("/puzzle")
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Puzzle not available");
+            }
+            return res.json();
+        })
+        .then(data => {
+            puzzleData = data;
+            cells = [];
+
+            const gridDiv = document.getElementById("grid");
+            gridDiv.innerHTML = "";
+
+            data.grid.forEach((row, r) => {
+                const rowDiv = document.createElement("div");
+                rowDiv.className = "row";
+                cells[r] = [];
+
+                row.forEach((_, c) => {
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "cell-wrapper";
+
+                    const box = document.createElement("input");
+                    box.className = "cell";
+                    box.maxLength = 1;
+
+                    box.setAttribute("inputmode", "text");
+                    box.setAttribute("pattern", "[A-Za-z]");
+                    box.setAttribute("autocomplete", "off");
+                    box.setAttribute("autocorrect", "off");
+                    box.setAttribute("autocapitalize", "characters");
+                    box.setAttribute("spellcheck", "false");
+
+                    if (data.solution[r][c] === "#") {
+                        box.classList.add("black");
+                        box.disabled = true;
+                    }
+
+                    cells[r][c] = box;
+
+                    box.addEventListener("pointerdown", e => {
+                        e.preventDefault();
+                        box.focus();
+                    });
+
+                    box.addEventListener("pointerup", () => {
+                        direction = direction === "across" ? "down" : "across";
+                        highlightWord(r, c);
+                        showClue(r, c);
+                    });
+
+                    box.addEventListener("focus", () => {
+                        currentCell = { r, c };
+                        highlightWord(r, c);
+                        showClue(r, c);
+                    });
+
+                    box.addEventListener("input", () => {
+                        box.value = box.value.toUpperCase();
+                        clearCheckState(box);
+
+                        if (box.value.length === 1) {
+                            moveCursor(r, c);
+                            checkWin();
+                        }
+                    });
+
+                    box.addEventListener("keydown", e => {
+                        if (e.key === "Backspace") {
+                            e.preventDefault();
+                            handleBackspace(r, c);
+                        }
+                    });
+
+                    if (
+                        data.numbers?.[r]?.[c] &&
+                        data.solution[r][c] !== "#"
+                    ) {
+                        const num = document.createElement("div");
+                        num.className = "number";
+                        num.textContent = data.numbers[r][c];
+                        wrapper.appendChild(num);
+                    }
+
+                    wrapper.appendChild(box);
+                    rowDiv.appendChild(wrapper);
+                });
+
+                gridDiv.appendChild(rowDiv);
+            });
+        })
+        .catch(err => {
+            document.getElementById("grid").innerHTML = "";
+            document.getElementById("clue").textContent =
+                "No puzzle available today.";
+            console.error(err);
+        });
+}
+
+
+function highlightWord(r, c) {
+    document.querySelectorAll(".cell").forEach(cell =>
+        cell.classList.remove("active")
+    );
+
+    if (direction === "across") {
+        let col = c;
+        while (col > 0 && puzzleData.solution[r][col - 1] !== "#") col--;
+        while (col < puzzleData.solution[r].length && puzzleData.solution[r][col] !== "#") {
+            cells[r][col].classList.add("active");
+            col++;
+        }
+    } else {
+        let row = r;
+        while (row > 0 && puzzleData.solution[row - 1][c] !== "#") row--;
+        while (row < puzzleData.solution.length && puzzleData.solution[row][c] !== "#") {
+            cells[row][c].classList.add("active");
+            row++;
+        }
+    }
+}
+
+function showClue(r, c) {
+    const clueBox = document.getElementById("clue");
+
+    let sr = r;
+    let sc = c;
+
+    if (direction === "across") {
+        while (sc > 0 && puzzleData.solution[sr][sc - 1] !== "#") {
+            sc--;
+        }
+    } else {
+        while (sr > 0 && puzzleData.solution[sr - 1][sc] !== "#") {
+            sr--;
+        }
+    }
+
+    const num = puzzleData.numbers?.[sr]?.[sc];
+    if (!num) {
+        clueBox.textContent = "";
+        return;
+    }
+
+    const clues =
+        direction === "across"
+            ? puzzleData.across_clues
+            : puzzleData.down_clues;
+
+    const clueText = clues?.[String(num)];
+
+    if (typeof clueText === "string") {
+        clueBox.textContent =
+            (direction === "across" ? "Across " : "Down ") +
+            num +
+            ": " +
+            clueText;
+    } else {
+        clueBox.textContent = "";
+    }
+}
+
+
+function moveCursor(r, c) {
+    if (direction === "across") {
+        for (let nc = c + 1; nc < puzzleData.solution[r].length; nc++) {
+            if (puzzleData.solution[r][nc] !== "#") {
+                cells[r][nc].focus();
+                return;
+            }
+        }
+    } else {
+        for (let nr = r + 1; nr < puzzleData.solution.length; nr++) {
+            if (puzzleData.solution[nr][c] !== "#") {
+                cells[nr][c].focus();
+                return;
+            }
+        }
+    }
+}
+
+function handleBackspace(r, c) {
+    const box = cells[r][c];
+
+    if (box.value !== "") {
+        box.value = "";
+        clearCheckState(box);
+        return;
+    }
+
+    if (direction === "across") {
+        for (let pc = c - 1; pc >= 0; pc--) {
+            if (puzzleData.solution[r][pc] !== "#") {
+                cells[r][pc].focus();
+                cells[r][pc].value = "";
+                return;
+            }
+        }
+    } else {
+        for (let pr = r - 1; pr >= 0; pr--) {
+            if (puzzleData.solution[pr][c] !== "#") {
+                cells[pr][c].focus();
+                cells[pr][c].value = "";
+                return;
+            }
+        }
+    }
+}
+
+function checkLetter() {
+    if (!currentCell) return;
+    const { r, c } = currentCell;
+    const box = cells[r][c];
+    if (!box.value) return;
+
+    clearCheckState(box);
+    box.classList.add(
+        box.value === puzzleData.solution[r][c] ? "correct" : "incorrect"
+    );
+}
+
+function checkWord() {
+    if (!currentCell) return;
+    const { r, c } = currentCell;
+    let positions = [];
+
+    if (direction === "across") {
+        let sc = c;
+        while (sc > 0 && puzzleData.solution[r][sc - 1] !== "#") sc--;
+        while (sc < puzzleData.solution[r].length && puzzleData.solution[r][sc] !== "#") {
+            positions.push({ r, c: sc });
+            sc++;
+        }
+    } else {
+        let sr = r;
+        while (sr > 0 && puzzleData.solution[sr - 1][c] !== "#") sr--;
+        while (sr < puzzleData.solution.length && puzzleData.solution[sr][c] !== "#") {
+            positions.push({ r: sr, c });
+            sr++;
+        }
+    }
+
+    positions.forEach(pos => {
+        const box = cells[pos.r][pos.c];
+        if (!box.value) return;
+        clearCheckState(box);
+        box.classList.add(
+            box.value === puzzleData.solution[pos.r][pos.c] ? "correct" : "incorrect"
+        );
+    });
+}
+
+function checkBoard() {
+    let allCorrect = true;
+
+    puzzleData.solution.forEach((row, r) => {
+        row.forEach((letter, c) => {
+            if (letter === "#") return;
+            const box = cells[r][c];
+            clearCheckState(box);
+
+            if (!box.value || box.value !== letter) {
+                box.classList.add("incorrect");
+                allCorrect = false;
+            } else {
+                box.classList.add("correct");
+            }
+        });
+    });
+}
+
+function showWinPopup() {
+    document.getElementById("win-overlay").classList.remove("hidden");
+}
+document.getElementById("win-close").addEventListener("click", () => {
+    document.getElementById("win-overlay").classList.add("hidden");
+});
+
+
+function checkWin() {
+    if (hasWon) return;
+
+    for (let r = 0; r < puzzleData.solution.length; r++) {
+        for (let c = 0; c < puzzleData.solution[r].length; c++) {
+            if (puzzleData.solution[r][c] === "#") continue;
+            if (cells[r][c].value !== puzzleData.solution[r][c]) return;
+        }
+    }
+
+    hasWon = true;
+    showWinPopup();
+}
+
+
+</script>
+
+</body>
+</html>

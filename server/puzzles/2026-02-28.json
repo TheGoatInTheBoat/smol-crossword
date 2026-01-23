@@ -1,0 +1,42 @@
+{
+        "grid": [
+            ["", "#", "#", ""],
+            ["", "#", "", ""],
+            ["", "", "", ""],
+            ["", "", "", "#"],
+            ["#", "", "", ""],
+            ["#", "#", "", "#"]
+        ],
+
+        "solution": [
+            ["L", "#", "#", "A"],
+            ["I", "#", "U", "P"],
+            ["L", "O", "V", "E"],
+            ["Y", "O", "U", "#"],
+            ["#", "B", "L", "T"],
+            ["#", "#", "A", "#"]
+        ],
+
+        "numbers": [
+            [1, 0, 0, 4],
+            [0, 0, 3, 0],
+            [5, 2, 0, 0],
+            [6, 0, 0, 0],
+            [0, 7, 0, 0],
+            [0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "3": "Classic Pixar film featuring a floating house",
+            "5": "My deep affection for you, Emily",
+            "6": "Second-person pronoun", 
+            "7": "Deli order, for short"
+        },
+
+        "down_clues": {
+            "1": "Of the valley, perhaps",
+            "2": "A family favorite beachside vacation location", 
+            "3": "Dangly thingy in the gullet",
+            "4": "To imitate"
+        }
+}
