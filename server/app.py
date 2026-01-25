@@ -14,21 +14,17 @@ def home():
 @app.route("/puzzle")
 def puzzle():
     today = date.today().isoformat()
-    filename = f"{today}.json"
-    path = os.path.join(PUZZLE_DIR, filename)
+    path = os.path.join(PUZZLE_DIR, f"{today}.json")
 
     if not os.path.exists(path):
         return jsonify({"error": "Puzzle not available"}), 404
 
     try:
         with open(path, "r", encoding="utf-8") as f:
-            puzzle_data = json.load(f)
-        return jsonify(puzzle_data)
-
+            return jsonify(json.load(f))
     except Exception as e:
         print("PUZZLE LOAD ERROR:", e)
         return jsonify({"error": "Internal server error"}), 500
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
