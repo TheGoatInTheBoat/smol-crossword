@@ -1,42 +1,47 @@
 {
         "grid": [
-            ["", "#", "#", ""],
-            ["", "#", "", ""],
-            ["", "", "", ""],
-            ["", "", "", "#"],
-            ["#", "", "", ""],
-            ["#", "#", "", "#"]
+            ["#", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["#", "", "", "", "#"],
+            ["", "", "#", "#", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""]
         ],
 
         "solution": [
-            ["L", "#", "#", "A"],
-            ["I", "#", "U", "P"],
-            ["L", "O", "V", "E"],
-            ["Y", "O", "U", "#"],
-            ["#", "B", "L", "T"],
-            ["#", "#", "A", "#"]
+            ["#", "L", "E", "F", "T"],
+            ["D", "U", "A", "L", "#"],
+            ["#", "T", "T", "Y", "#"],
+            ["U", "H", "#", "#", "O"],
+            ["F", "E", "L", "O", "N"],
+            ["O", "R", "A", "T", "E"]
         ],
 
         "numbers": [
-            [1, 0, 0, 4],
-            [0, 0, 3, 0],
-            [5, 2, 0, 0],
-            [6, 0, 0, 0],
-            [0, 7, 0, 0],
-            [0, 0, 0, 0]
+            [0, 2, 3, 4, 0],
+            [4, 0, 0, 0, 0],
+            [0, 3, 0, 0, 0],
+            [1, 0, 0, 0, 7],
+            [5, 0, 5, 6, 0],
+            [6, 0, 0, 0, 0]
         ],
 
         "across_clues": {
-            "3": "Classic Pixar film featuring a floating house",
-            "5": "My deep affection for you, Emily",
-            "6": "Second-person pronoun", 
-            "7": "Deli order, for short"
+            "2": "That's not right",
+            "4": "Two parts",
+            "3": "Old-school text messaging tech", 
+            "1": "...",
+            "5": "Convicted criminal",
+            "6": "Speak formally"
         },
 
         "down_clues": {
-            "1": "Of the valley, perhaps",
-            "2": "A family favorite beachside vacation location", 
-            "3": "Dangly thingy in the gullet",
-            "4": "To imitate"
+            "1": "Unidentified flying object",
+            "2": "Martin of Reformation fame", 
+            "3": "Have a meal",
+            "4": "Airborn travel", 
+            "5": "City of Angels",
+            "6": "An extra period", 
+            "7": "Single unit"
         }
 }
