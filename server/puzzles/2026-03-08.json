@@ -1,0 +1,42 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["#", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["#", "", "", "", "#"]
+        ],
+
+        "solution": [
+            ["M", "E", "D", "I", "C"],
+            ["E", "A", "R", "T", "H"],
+            ["#", "S", "A", "C", "O"],
+            ["T", "E", "C", "H", "Y"],
+            ["#", "S", "O", "Y", "#"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [0, 7, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+            [0, 9, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "1": "Field doctor",
+            "6": "Our blue marble",
+            "7": "Maine river for camping and losing phones", 
+            "8": "Geeky, in slang", 
+            "9": "Tofu base"
+        },
+
+        "down_clues": {
+            "1": "The speaker",
+            "2": "Relaxes", 
+            "3": "Harry Potter",
+            "4": "Needing a scratch", 
+            "5": "Bok ___ (cabbage)"
+        }
+
+}

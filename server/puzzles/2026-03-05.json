@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "#", "#", "", ""],
+            ["", "", "", "#", ""]
+        ],
+
+        "solution": [
+            ["H", "U", "C", "K", "S"],
+            ["U", "N", "F", "I", "T"],
+            ["N", "O", "O", "S", "E"],
+            ["C", "#", "#", "S", "E"],
+            ["H", "U", "G", "#", "D"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [0, 0, 0, 8, 0],
+            [9, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "1": "Hurl aggressively",
+            "6": "Out of shape",
+            "7": "Hangman’s loop", 
+            "8": "Direction opposite of NW", 
+            "9": "Neighborhood governing group, for short"
+        },
+
+        "down_clues": {
+            "1": "Gut feeling",
+            "2": "Popular card game", 
+            "3": "Company's chief of finance",
+            "4": "Mwah!", 
+            "5": "Rider’s horse"
+        }
+}

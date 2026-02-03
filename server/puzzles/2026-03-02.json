@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["#", "", "", "", ""],
+            ["#", "", "#", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "#", "#"],
+            ["", "", "", "", ""],
+        ],
+
+        "solution": [
+            ["#", "Q", "U", "I", "Z"],
+            ["#", "U", "#", "B", "I"],
+            ["T", "R", "A", "M", "P"],
+            ["E", "A", "R", "#", "#"],
+            ["A", "N", "T", "I", "C"],
+        ],
+
+        "numbers": [
+            [0, 2, 0, 4, 5],
+            [0, 0, 0, 6, 0],
+            [1, 0, 3, 0, 0],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "2": "Short test",
+            "6": "Prefix meaning “two”",
+            "1": "Lady and the ___", 
+            "7": "Part of the head",
+            "8": "Playfully silly"
+        },
+
+        "down_clues": {
+            "1": "Hot drink",
+            "2": "Islam’s holy book", 
+            "3": "Creative pursuit",
+            "4": "Tech giant, briefly", 
+            "5": "Nothing at all"
+        }
+}

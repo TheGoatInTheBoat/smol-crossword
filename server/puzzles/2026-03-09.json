@@ -1,0 +1,42 @@
+{
+        "grid": [
+            ["#", "#", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["#", "#", "F", "I", "T"],
+            ["M", "A", "R", "R", "Y"],
+            ["E", "Q", "U", "A", "L"],
+            ["S", "U", "I", "T", "E"],
+            ["H", "A", "T", "E", "R"]
+        ],
+
+        "numbers": [
+            [0, 0, 3, 4, 5],
+            [1, 2, 0, 0, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "3": "In good shape",
+            "1": "Tie the knot", 
+            "6": "The same",
+            "7": "Set of rooms", 
+            "8": "One who dislikes intensely"
+        },
+
+        "down_clues": {
+            "1": "Interlock",
+            "2": "Water, in Latin", 
+            "3": "Produce from a tree",
+            "4": "Very angry", 
+            "5": "Famous rapper, ___ the creator"
+        }
+
+}

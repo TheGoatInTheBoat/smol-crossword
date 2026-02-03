@@ -1,0 +1,40 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "#", "#", "", ""],
+            ["", "", "", "", ""],
+            ["", "#", "", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["H", "O", "U", "S", "E"],
+            ["A", "#", "#", "H", "A"],
+            ["T", "R", "E", "E", "S"],
+            ["E", "#", "M", "E", "E"],
+            ["S", "O", "U", "N", "D"]
+        ],
+
+        "numbers": [
+            [1, 0, 0, 3, 4],
+            [0, 0, 0, 5, 0],
+            [6, 0, 2, 0, 0],
+            [0, 0, 7, 0, 0],
+            [8, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "1": "A place to live",
+            "5": "Guffaw",
+            "6": "Forest plants", 
+            "7": "Excited self-proclamation",
+            "8": "Hear me"
+        },
+
+        "down_clues": {
+            "1": "A strong dislike for",
+            "2": "A flightless speedster bird", 
+            "3": "Surface gloss",
+            "4": "Relaxed or reduced", 
+        }
+}
