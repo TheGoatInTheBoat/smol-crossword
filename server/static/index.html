@@ -223,7 +223,7 @@ function clearCheckState(box) {
 function loadPuzzle() {
     hasWon = false;
 
-    fetch("/puzzle")
+    fetch("/puzzles")
         .then(res => {
             if (!res.ok) {
                 throw new Error("Puzzle not available");
