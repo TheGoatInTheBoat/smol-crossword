@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["#", "", "", "", "#"],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["H", "A", "R", "D", "Y"],
+            ["A", "W", "A", "R", "E"],
+            ["S", "O", "D", "A", "S"],
+            ["#", "K", "O", "I", "#"],
+            ["P", "E", "N", "N", "E"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [0, 8, 0, 0, 0],
+            [9, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "1": "Tough and resilient",
+            "6": "Conscious of",
+            "7": "Fizzy drinks", 
+            "8": "Decorative pond fish", 
+            "9": "Tube-shaped pasta"
+        },
+
+        "down_clues": {
+            "1": "Possesses",
+            "2": "Woke up", 
+            "3": "Radioactive gas",
+            "4": "Let out liquid", 
+            "5": "Affirmative reply"
+        }
+}

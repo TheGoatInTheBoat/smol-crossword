@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "#", "#", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["S", "M", "A", "R", "T"],
+            ["C", "O", "D", "E", "R"],
+            ["O", "D", "D", "L", "Y"],
+            ["L", "#", "#", "I", "M"],
+            ["D", "U", "N", "C", "E"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [0, 0, 0, 8, 0],
+            [9, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "1": "Clever",
+            "6": "Software developer",
+            "7": "In a strange way", 
+            "8": "Chess title below GM", 
+            "9": "Slow learner"
+        },
+
+        "down_clues": {
+            "1": "Reprimand",
+            "2": "Game tweak, briefly", 
+            "3": "Put together",
+            "4": "Ancient object", 
+            "5": "“Go ahead,” challengingly"
+        }
+}

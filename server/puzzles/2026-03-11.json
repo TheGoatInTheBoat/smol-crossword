@@ -1,0 +1,40 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "", "", "", "#"],
+            ["", "", "", "", ""],
+            ["", "", "", "#", "#"]
+        ],
+
+        "solution": [
+            ["A", "T", "L", "A", "S"],
+            ["L", "A", "I", "R", "#"],
+            ["T", "I", "E", "S", "#"],
+            ["E", "G", "G", "E", "D"],
+            ["R", "A", "E", "#", "#"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 0],
+            [5, 0, 0, 0, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+        ],
+
+        "across_clues": {
+            "1": "Book of maps",
+            "5": "Villain’s hideout",
+            "6": "Neckties or draws", 
+            "7": "Urged on", 
+            "8": "Issa of Insecure"
+        },
+
+        "down_clues": {
+            "1": "Change slightly",
+            "2": "Northern forest biome", 
+            "3": "Feudal lord",
+            "4": "British “butt”"
+        }
+}
