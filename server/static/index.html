@@ -38,8 +38,10 @@
 
 
         .cell.active {
-            background-color: #d0ebff;
+            outline: 3px solid #339af0;
+            outline-offset: -3px;
         }
+
 
         .cell.correct {
             background-color: #c8f7c5;
@@ -206,6 +208,7 @@ let direction = "across";
 let cells = [];
 let currentCell = null;
 let hasWon = false;
+let lastClickedCell = null;
 
 const btnLetter = document.getElementById("btn-letter");
 const btnWord = document.getElementById("btn-word");
@@ -272,16 +275,22 @@ function loadPuzzle() {
                         box.focus();
                     });
 
-                    let lastCell = null;
-
                     box.addEventListener("pointerup", () => {
-                        if (lastCell && lastCell.r === r && lastCell.c === c) {
+                        if (
+                            lastClickedCell &&
+                            lastClickedCell.r === r &&
+                            lastClickedCell.c === c
+                        ) {
                             direction = direction === "across" ? "down" : "across";
                         }
-                        lastCell = { r, c };
+
+                        lastClickedCell = { r, c };
+                        currentCell = { r, c };
+
                         highlightWord(r, c);
                         showClue(r, c);
                     });
+
 
 
                     box.addEventListener("focus", () => {
