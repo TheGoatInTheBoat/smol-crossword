@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, send_from_directory
 from datetime import datetime
 import os
+import json
 
 app = Flask(__name__, static_folder="static")
 
@@ -16,13 +17,17 @@ def puzzle():
     today = datetime.utcnow().strftime("%Y-%m-%d")
     puzzle_path = os.path.join(PUZZLES_DIR, f"{today}.json")
 
-    print("Looking for:", puzzle_path)  # shows in Render logs
-
     if not os.path.exists(puzzle_path):
         return jsonify({"error": "Puzzle not found"}), 404
 
-    with open(puzzle_path, "r") as f:
-        return jsonify(__import__("json").load(f))
+    try:
+        with open(puzzle_path, "r") as f:
+            return jsonify(json.load(f))
+    except json.JSONDecodeError as e:
+        return jsonify({
+            "error": "Invalid puzzle format",
+            "details": str(e)
+        }), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
