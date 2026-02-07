@@ -1,35 +1,28 @@
 from flask import Flask, jsonify, send_from_directory
-from datetime import date
-import json
-import os
 from datetime import datetime
-from zoneinfo import ZoneInfo
-
-today = datetime.now(ZoneInfo("America/New_York")).date().isoformat()
-
+import os
 
 app = Flask(__name__, static_folder="static")
 
-PUZZLE_DIR = os.path.join(os.path.dirname(__file__), "puzzles")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PUZZLES_DIR = os.path.join(BASE_DIR, "puzzles")
 
 @app.route("/")
-def home():
+def index():
     return send_from_directory(app.static_folder, "index.html")
 
 @app.route("/puzzle")
 def puzzle():
-    path = os.path.join(PUZZLE_DIR, f"{today}.json")
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    puzzle_path = os.path.join(PUZZLES_DIR, f"{today}.json")
 
-    if not os.path.exists(path):
-        return jsonify({"error": "Puzzle not available"}), 404
+    print("Looking for:", puzzle_path)  # shows in Render logs
 
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return jsonify(json.load(f))
-    except Exception as e:
-        print("PUZZLE LOAD ERROR:", e)
-        return jsonify({"error": "Internal server error"}), 500
+    if not os.path.exists(puzzle_path):
+        return jsonify({"error": "Puzzle not found"}), 404
+
+    with open(puzzle_path, "r") as f:
+        return jsonify(__import__("json").load(f))
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=10000)
