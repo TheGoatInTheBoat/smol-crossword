@@ -2,6 +2,9 @@ from flask import Flask, jsonify, send_from_directory
 from datetime import datetime
 import os
 import json
+from zoneinfo import ZoneInfo
+
+today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
 
 app = Flask(__name__, static_folder="static")
 
@@ -14,7 +17,7 @@ def index():
 
 @app.route("/puzzle")
 def puzzle():
-    today = datetime.utcnow().strftime("%Y-%m-%d")
+    today = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     puzzle_path = os.path.join(PUZZLES_DIR, f"{today}.json")
 
     if not os.path.exists(puzzle_path):
