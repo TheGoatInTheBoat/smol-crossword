@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "", "", "#", "#"],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["Z", "E", "B", "R", "A"],
+            ["O", "N", "I", "O", "N"],
+            ["N", "E", "S", "T", "#"],
+            ["E", "M", "O", "#", "#"],
+            ["S", "Y", "N", "T", "H"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+            [9, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Like a striped horse",
+            "6": "Vegetable with layers",
+            "7": "Bird’s home", 
+            "8": "Angsty music genre", 
+            "9": "Electronic keyboard, informally"
+        },
+
+        "down_clues": {
+            "1": "Areas",
+            "2": "Opponent", 
+            "3": "American buffalo",
+            "4": "Decay", 
+            "5": "'A' prior to a vowel"
+        }
+}

@@ -1,0 +1,42 @@
+{
+        "grid": [
+            ["#", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "#", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["#", "T", "H", "U", "G"],
+            ["C", "R", "A", "N", "E"],
+            ["L", "A", "T", "T", "E"],
+            ["A", "S", "#", "I", "S"],
+            ["W", "H", "O", "L", "E"]
+        ],
+
+        "numbers": [
+            [0, 2, 3, 4, 5],
+            [1, 0, 0, 0, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 8, 0],
+            [9, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "2": "Street tough",
+            "1": "Long-necked bird or construction machine",
+            "6": "Espresso drink with milk", 
+            "7": "With 8 across: Without changes", 
+            "8": "With 7 across: Without changes",
+            "9": "Complete"
+        },
+
+        "down_clues": {
+            "1": "Sharp animal nail",
+            "2": "Garbage", 
+            "3": "Headwear",
+            "4": "Up to the that time", 
+            "5": "Migrating honkers"
+        }
+}
