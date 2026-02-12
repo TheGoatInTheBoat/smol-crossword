@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "#", "", "", ""],
+            ["", "", "", "#", ""]
+        ],
+
+        "solution": [
+            ["G", "R", "I", "P", "E"],
+            ["L", "U", "M", "E", "N"],
+            ["A", "M", "B", "L", "E"],
+            ["D", "#", "U", "T", "M"],
+            ["E", "X", "E", "#", "A"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [0, 0, 8, 0, 0],
+            [9, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Petty complaint",
+            "6": "Unit of light output",
+            "7": "Walk casually", 
+            "8": "Geographic coordinate acronym", 
+            "9": "Windows program file type"
+        },
+
+        "down_clues": {
+            "1": "Open space in a forest",
+            "2": "Spirit made from molasses", 
+            "3": "Fill with a quality",
+            "4": "Animal hide", 
+            "5": "Colon-cleansing procedure"
+        }
+}
