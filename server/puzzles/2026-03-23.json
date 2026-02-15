@@ -1,0 +1,40 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "#", "", "", ""]
+        ],
+
+        "solution": [
+            ["G", "R", "A", "P", "H"],
+            ["H", "O", "C", "O", "#"],
+            ["O", "P", "T", "I", "C"],
+            ["S", "E", "E", "S", "#"],
+            ["T", "#", "D", "E", "W"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 0],
+            [5, 0, 0, 0, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [0, 0, 8, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Data chart", 
+            "5": "School dance, informally",
+            "6": "Related to Observing", 
+            "7": "Observes", 
+            "8": "Morning moisture"
+        },
+
+        "down_clues": {
+            "1": "Spectre",
+            "2": "Thick cord", 
+            "3": "Performed in a role",
+            "4": "Graceful composure"
+        }
+}
