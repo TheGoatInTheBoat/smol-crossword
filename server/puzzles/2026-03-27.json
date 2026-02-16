@@ -1,0 +1,40 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "#", "", "#", "#"],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["E", "B", "O", "N", "Y"],
+            ["L", "E", "D", "G", "E"],
+            ["V", "E", "I", "L", "S"],
+            ["E", "#", "N", "#", "#"],
+            ["S", "U", "S", "H", "I"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Very dark hardwood",
+            "6": "Window perch, maybe",
+            "7": "Conceals from view", 
+            "8": "Wasabi’s usual partner"
+        },
+
+        "down_clues": {
+            "1": "Fantasy forest folk",
+            "2": "Honey maker", 
+            "3": "You'd hate for your Valorant enemies to buy these",
+            "4": "Honesty preface, online shorthand", 
+            "5": "Respond in the positive"
+        }
+}
