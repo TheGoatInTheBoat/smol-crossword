@@ -1,0 +1,42 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "", "", "", ""],
+            ["", "#", "", "", ""]
+        ],
+
+        "solution": [
+            ["G", "U", "A", "R", "D"],
+            ["U", "N", "D", "U", "E"],
+            ["I", "D", "O", "L", "#"],
+            ["L", "O", "B", "E", "S"],
+            ["D", "#", "E", "R", "R"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 5],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+            [9, 0, 0, 0, 6],
+            [0, 0, 10, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Protect from harm",
+            "7": "Excessive or unwarranted",
+            "8": "Object of great admiration", 
+            "9": "Parts of the brain or ears", 
+            "10": "Make a mistake"
+        },
+
+        "down_clues": {
+            "1": "Association of craftsmen",
+            "2": "Reverse an action", 
+            "3": "Creator of Photoshop and Illistrator",
+            "4": "Measuring stick", 
+            "5": "Quarterback hunter, briefly",
+            "6": "High-level gacha rarity"
+        }
+}

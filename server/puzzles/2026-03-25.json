@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["#", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["#", "", "", "", ""],
+            ["", "", "", "", "#"]
+        ],
+
+        "solution": [
+            ["#", "C", "A", "S", "H"],
+            ["C", "A", "N", "O", "E"],
+            ["A", "U", "D", "I", "#"],
+            ["#", "S", "E", "L", "L"],
+            ["M", "E", "S", "S", "#"]
+        ],
+
+        "numbers": [
+            [0, 2, 3, 4, 5],
+            [1, 0, 0, 0, 0],
+            [6, 0, 0, 0, 0],
+            [0, 7, 0, 0, 0],
+            [8, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Narrow paddle boat",
+            "2": "Paper tender",
+            "6": "German luxury car brand", 
+            "7": "Transfer ownership for pay", 
+            "8": "State of disorder"
+        },
+
+        "down_clues": {
+            "1": "Golden State abbr.",
+            "2": "Reason why", 
+            "3": "South American mountain range",
+            "4": "Gets dirty", 
+            "5": "Element with atomic number 2"
+        }
+}
