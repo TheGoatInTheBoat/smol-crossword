@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["#", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["S", "T", "A", "V", "E"],
+            ["P", "O", "L", "E", "#"],
+            ["A", "D", "O", "R", "N"],
+            ["S", "A", "N", "D", "Y"],
+            ["#", "Y", "E", "E", "T"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 5],
+            [8, 0, 0, 0, 0],
+            [0, 9, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Prevent from happening",
+            "6": "Long, slender rod",
+            "7": "Decorate or make more attractive", 
+            "8": "Covered with grains", 
+            "9": "Slang for throwing something with force"
+        },
+
+        "down_clues": {
+            "1": "Places to relax and treat your body and mind",
+            "2": "Prior to tomorrow", 
+            "3": "Without anyone else",
+            "4": "Spanish for “green”", 
+            "5": "Trendsetter for these word puzzles"
+        }
+}
