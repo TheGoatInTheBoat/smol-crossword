@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "#", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "#", ""]
+        ],
+
+        "solution": [
+            ["R", "O", "C", "#", "B"],
+            ["E", "L", "O", "P", "E"],
+            ["G", "I", "V", "E", "N"],
+            ["A", "V", "E", "R", "T"],
+            ["L", "E", "T", "#", "O"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 0, 5],
+            [6, 0, 0, 4, 0],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+            [9, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Outing Club at RPI, abbr.",
+            "6": "Fugitive marriage",
+            "7": "Initial truths in a proof", 
+            "8": "Turn away to prevent", 
+            "9": "Allow"
+        },
+
+        "down_clues": {
+            "1": "Fit for royalty",
+            "2": "Branch of peace, featured on the dime", 
+            "3": "Desire something that belongs to someone else",
+            "4": "What the division symbol might mean", 
+            "5": "Compartmentalized Japanese lunch box"
+        }
+}
