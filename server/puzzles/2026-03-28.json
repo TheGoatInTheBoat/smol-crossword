@@ -1,0 +1,42 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["A", "C", "T", "O", "R"],
+            ["Z", "O", "O", "M", "#"],
+            ["U", "N", "D", "E", "R"],
+            ["R", "I", "D", "G", "E"],
+            ["E", "C", "#", "A", "I"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 5],
+            [8, 0, 0, 0, 0],
+            [9, 0, 0, 10, 0]
+        ],
+
+        "across_clues": {
+            "1": "Film performer ",
+            "6": "Video call platform",
+            "7": "Beneath or below", 
+            "8": "Long, narrow hilltop", 
+            "9": "Greek prefix meaning 'out of' or 'away from'",
+            "10": "Computers that learn"
+        },
+
+        "down_clues": {
+            "1": "Bright sky-blue color",
+            "2": "Shaped like a cone", 
+            "3": "Conversemist",
+            "4": "Last letter of the Greek alphabet", 
+            "5": "Outdoor gear retailer"
+        }
+}
