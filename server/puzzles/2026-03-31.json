@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "#", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["V", "E", "N", "M", "O"],
+            ["E", "#", "O", "A", "T"],
+            ["N", "O", "T", "I", "T"],
+            ["T", "W", "I", "N", "E"],
+            ["I", "N", "N", "E", "R"]
+        ],
+
+        "numbers": [
+            [1, 0, 3, 4, 5],
+            [0, 0, 6, 0, 0],
+            [7, 2, 0, 0, 0],
+            [8, 0, 0, 0, 0],
+            [9, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Send money instantly by phone",
+            "6": "Grain used in porridge or milk alternatives",
+            "7": "Playground cry meaning “someone else is it!”", 
+            "8": "Strong light cord made of twisted strands", 
+            "9": "Located inside; more internal"
+        },
+
+        "down_clues": {
+            "1": "Large drink size at Starbucks",
+            "2": "Possess it", 
+            "3": "Sitting this round out",
+            "4": "Home to Acadia National Park", 
+            "5": "Semi-aquatic mammal known for floating on its back"
+        }
+}
