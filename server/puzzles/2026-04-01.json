@@ -27,22 +27,22 @@
         ],
 
         "across_clues": {
-            "2": "TA",
-            "1": "RUCKUS",
-            "7": "EXCITE", 
-            "8": "SEEKER", 
-            "9": "TDS",
-            "10": "SOS",
-            "11": "SU",
-            "12": "TM"
+            "2": "Chemical element whose name derives from a Greek mythological figure famously unable to eat",
+            "1": "Loud commotion",
+            "7": "Fire up", 
+            "8": "Harry’s position on the Gryffindor team", 
+            "9": "6-point gains in American Football, briefly",
+            "10": "An urgent transmission of distress",
+            "11": "An unkind texting shorthand",
+            "12": "Brand protection abbr."
         },
 
         "down_clues": {
-            "1": "RESTS",
-            "2": "TUXEDO", 
-            "3": "ACCESS",
-            "4": "KIK", 
-            "5": "CUTEST",
-            "6": "SERUM"
+            "1": "Takes a breather",
+            "2": "Formal garment worn at a wedding or a prom, perhaps", 
+            "3": "Ability to enter",
+            "4": "Messaging app similar to WhatsApp", 
+            "5": "Most adorable",
+            "6": "Skin-care liquid applied after cleansing"
         }
 }
