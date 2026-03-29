@@ -1,0 +1,41 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", "#"],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "#", ""]
+        ],
+
+        "solution": [
+            ["A", "C", "O", "R", "N"],
+            ["N", "A", "P", "E", "#"],
+            ["K", "N", "E", "E", "S"],
+            ["L", "A", "R", "D", "S"],
+            ["E", "L", "A", "#", "D"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 4, 0],
+            [6, 0, 0, 0, 0],
+            [7, 0, 0, 0, 5],
+            [8, 0, 0, 0, 0],
+            [9, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Oak tree seed",
+            "6": "Back of the neck",
+            "7": "Another jointed leg part", 
+            "8": "Adds fat to food", 
+            "9": "School subject, briefly"
+        },
+
+        "down_clues": {
+            "1": "One jointed leg part",
+            "2": "Man-made waterway", 
+            "3": "Sung drama",
+            "4": "Plant used for making clarinets or baskets", 
+            "5": "Fast computer storage, for short"
+        }
+}
