@@ -1,0 +1,43 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "#", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["S", "H", "A", "R", "K"],
+            ["P", "A", "P", "E", "R"],
+            ["A", "R", "#", "G", "I"],
+            ["N", "A", "V", "A", "L"],
+            ["S", "M", "E", "L", "L"]
+        ],
+
+        "numbers": [
+            [1, 2, 3, 5, 6],
+            [7, 0, 0, 0, 0],
+            [8, 0, 0, 9, 0],
+            [10, 0, 4, 0, 0],
+            [11, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "The star of Jaws",
+            "7": "Beats rock but not scissors",
+            "8": "Arkansas abbrev.", 
+            "9": "Tract through which your food is digested, breifly", 
+            "10": "Maritime military",
+            "11": "A sense you lose when sick"
+        },
+
+        "down_clues": {
+            "1": "Tall beta moves",
+            "2": "Opposite of halal", 
+            "3": "College Board program for early college credit",
+            "4": "“Have” contraction ending", 
+            "5": "Fit for a royalty",
+            "6": "Small, shrimple crustaceans"
+        }
+}
