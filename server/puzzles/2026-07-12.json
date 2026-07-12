@@ -1,0 +1,43 @@
+{
+        "grid": [
+            ["", "", "", "", ""],
+            ["", "", "#", "", ""],
+            ["", "", "", "#", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""]
+        ],
+
+        "solution": [
+            ["S", "E", "T", "U", "P"],
+            ["U", "N", "#", "M", "L"],
+            ["A", "D", "D", "#", "U"],
+            ["V", "E", "N", "O", "M"],
+            ["E", "R", "A", "S", "E"]
+        ],
+
+        "numbers": [
+            [1, 2, 0, 4, 6],
+            [7, 0, 0, 8, 0],
+            [9, 0, 3, 0, 0],
+            [10, 0, 0, 5, 0],
+            [11, 0, 0, 0, 0]
+        ],
+
+        "across_clues": {
+            "1": "Physically Prepare",
+            "7": "Prefix meaning opposite of",
+            "8": "Metric unit of volume", 
+            "9": "Plus", 
+            "10": "A snake's lethal injection",
+            "11": "What you might use a pencil to do"
+        },
+
+        "down_clues": {
+            "1": "Like a charming butler or waiter",
+            "2": "Minecraft's final dimension descriptor", 
+            "3": "Famously double-helixed",
+            "4": "Verbal hesitation", 
+            "5": "Like Windows or Linux",
+            "6": "A feather or column of smoke"
+        }
+}
